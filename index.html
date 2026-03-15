@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Bangers&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
@@ -29,90 +29,185 @@
 <body class="dark-theme">
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">│ SAI <span>KUMAR /></span></a>
+            <a href="#" class="logo">Portfolio</a>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Work</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="theme-toggle" id="theme-toggle">
-                <div class="toggle-track">
-                    <div class="toggle-knob"></div>
-                </div>
-            </div>
+            <a href="SAI KUMAR GEN AI RESUME.pdf" target="_blank" class="btn btn-secondary nav-cv-btn">Download CV</a>
         </div>
     </nav>
 
     <main>
+        <!-- Global Background -->
+        <div class="modern-glow-bg"></div>
+        <canvas id="bg-canvas"></canvas>
+
+        <!-- Custom Cursor -->
+        <div class="cursor-dot"></div>
+        <div class="cursor-follower"></div>
+
         <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h2 class="sub-headline">PYTHON DEVELOPER • GENERATIVE AI • AGENTIC SYSTEMS</h2>
-                <h1 class="headline">Designing & Engineering <br><span class="gradient-text">Intelligent Digital
-                        Experiences</span>
-                </h1>
-                <p class="hero-description">Aspiring AI & Machine Learning Engineer specializing in
-                    LLMs, LangGraph, and building production-ready intelligent systems. Dedicated to solving real-world
-                    problems through innovative ML architectures.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="SAI KUMAR GEN AI RESUME.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
+            <div class="hero-bg"></div>
+            <div class="hero-visual">
+                <div class="profile-container neon-border glowing-avatar">
+                    <div class="abstract-blob"></div>
+                    <img src="assets/1234.png" alt="Sai Kumar" class="profile-img">
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="profile-container">
-                    <img src="assets/1234.png" alt="Veerabathini Sai Kumar" class="profile-img">
+            <div class="hero-content">
+                <h2 class="sub-headline">
+                    Hi, I'm <span class="gradient-text">Sai Kumar</span>
+                </h2>
+                <h1 class="headline">
+                    <span id="typing-text"></span><span class="cursor">|</span>
+                </h1>
+                <p class="hero-description">AI Engineer | Machine Learning Developer | Generative AI Enthusiast</p>
+                <div class="hero-actions-container">
+                    <div class="hero-actions">
+                        <a href="#contact" id="hire-me-scroll" class="btn btn-primary hero-btn-glow animated-btn">Hire
+                            Me</a>
+                        <a href="#projects" class="btn btn-secondary hero-btn-glow animated-btn">View My Work</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://linkedin.com/in/saikumar6302" target="_blank"
+                            class="social-icon neon-border-hover">Li</a>
+                        <a href="https://github.com/saikumar1429" target="_blank"
+                            class="social-icon neon-border-hover">Gh</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section id="statistics" class="statistics-section">
+            <div class="container stats-container reveal-up">
+                <div class="stat-item">
+                    <h3 class="stat-num">1</h3>
+                    <p class="stat-text">Year of Experience</p>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <h3 class="stat-num">10+</h3>
+                    <p class="stat-text">Projects Completed</p>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <h3 class="stat-num">5+</h3>
+                    <p class="stat-text">Technologies Mastered</p>
                 </div>
             </div>
         </section>
 
         <section id="skills" class="skills-section">
-            <div class="container">
-                <header class="section-header">
-                    <h2 class="section-title">Technical Expertise</h2>
-                    <p class="section-subtitle">A curated bento box of my skills and tools.</p>
-                </header>
-                <div class="skills-redesign-container">
-                    <div class="skill-category-group">
-                        <h3 class="category-title">Generative AI & LLMs</h3>
-                        <div class="icons-grid">
-                            <div class="icon-box"><span>🤖</span><span>RAG</span></div>
-                            <div class="icon-box"><span>🤖</span><span>Multi-agent Systems</span></div>
-                            <div class="icon-box"><span>📚</span><span>NLP</span></div>
-                            <div class="icon-box"><span>⌨️</span><span>Prompt Engineering</span></div>
-                            <div class="icon-box"><span>🔍</span><span>Semantic Search</span></div>
-                            <div class="icon-box"><span>📊</span><span>EDA</span></div>
+            <div class="container reveal-up">
+                <div class="section-header">
+                    <h2 class="section-title">Technical <span class="gradient-text">Armor</span></h2>
+                    <p class="section-subtitle">Engineering the future with a specialized stack of AI and Data tools.
+                    </p>
+                </div>
+
+                <div class="skills-3d-grid" id="skills-container">
+                    <!-- Category 1: AI & GenAI Systems -->
+                    <div class="skill-card-3d js-tilt">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="skill-icon-main">
+                                    <i class="devicon-python-plain colored"></i>
+                                </div>
+                                <h3>AI & GenAI Systems</h3>
+                                <div class="skill-tags-cloud">
+                                    <span class="skill-tag-pill">RAG</span>
+                                    <span class="skill-tag-pill">Multi-agent</span>
+                                    <span class="skill-tag-pill">NLP</span>
+                                    <span class="skill-tag-pill">LLMs</span>
+                                    <span class="skill-tag-pill">Semantic Search</span>
+                                    <span class="skill-tag-pill">Prompt Engineering</span>
+                                    <span class="skill-tag-pill">ML Models</span>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <p>Building agentic RAG pipelines and orchestrating complex LLM workflows for enterprise
+                                    solutions.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category-group">
-                        <h3 class="category-title">AI Frameworks</h3>
-                        <div class="icons-grid">
-                            <div class="icon-box"><span>🦜</span><span>LangChain</span></div>
-                            <div class="icon-box"><span>🕸️</span><span>LangGraph</span></div>
-                            <div class="icon-box"><span>🦙</span><span>LlamaIndex</span></div>
+
+                    <!-- Category 2: Frameworks & Programming -->
+                    <div class="skill-card-3d js-tilt">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="skill-icon-main">
+                                    <i class="devicon-googlecloud-plain colored"></i>
+                                </div>
+                                <h3>Frameworks & Logic</h3>
+                                <div class="skill-tags-cloud">
+                                    <span class="skill-tag-pill">LangChain</span>
+                                    <span class="skill-tag-pill">LangGraph</span>
+                                    <span class="skill-tag-pill">LlamaIndex</span>
+                                    <span class="skill-tag-pill">REST APIs</span>
+                                    <span class="skill-tag-pill">Pythonic Logic</span>
+                                    <span class="skill-tag-pill">Pytest</span>
+                                    <span class="skill-tag-pill">JSON</span>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <p>Specialized in LLM orchestration frameworks, Pythonic modular design, and automated
+                                    testing.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category-group">
-                        <h3 class="category-title">Programming & Data</h3>
-                        <div class="icons-grid">
-                            <div class="icon-box"><i class="devicon-python-plain"></i><span>Python</span></div>
-                            <div class="icon-box"><i class="devicon-pandas-plain"></i><span>Pandas</span></div>
-                            <div class="icon-box"><i class="devicon-numpy-plain"></i><span>NumPy</span></div>
-                            <div class="icon-box"><span>🧠</span><span>scikit-learn</span></div>
-                            <div class="icon-box"><span>💾</span><span>SQL</span></div>
-                            <div class="icon-box"><span>🔗</span><span>APIs</span></div>
+
+                    <!-- Category 3: Data Architecture & DBs -->
+                    <div class="skill-card-3d js-tilt">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="skill-icon-main">
+                                    <i class="devicon-pandas-plain colored"></i>
+                                </div>
+                                <h3>Data Architecture</h3>
+                                <div class="skill-tags-cloud">
+                                    <span class="skill-tag-pill">Pinecone</span>
+                                    <span class="skill-tag-pill">FAISS</span>
+                                    <span class="skill-tag-pill">ChromaDB</span>
+                                    <span class="skill-tag-pill">SQL</span>
+                                    <span class="skill-tag-pill">Pandas</span>
+                                    <span class="skill-tag-pill">NumPy</span>
+                                    <span class="skill-tag-pill">EDA</span>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <p>Designing high-performance vector retrieval systems and managing large-scale data
+                                    processing.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category-group">
-                        <h3 class="category-title">Vector DBs & BI</h3>
-                        <div class="icons-grid">
-                            <div class="icon-box"><span>🌲</span><span>Pinecone</span></div>
-                            <div class="icon-box"><span>🔍</span><span>FAISS</span></div>
-                            <div class="icon-box"><span>🌈</span><span>ChromaDB</span></div>
-                            <div class="icon-box"><span>📊</span><span>Power BI</span></div>
-                            <div class="icon-box"><span>📈</span><span>Seaborn</span></div>
+
+                    <!-- Category 4: Analytics & Tools -->
+                    <div class="skill-card-3d js-tilt">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="skill-icon-main">
+                                    <i class="devicon-streamlit-plain colored"></i>
+                                </div>
+                                <h3>Analytics & Tools</h3>
+                                <div class="skill-tags-cloud">
+                                    <span class="skill-tag-pill">Power BI</span>
+                                    <span class="skill-tag-pill">Streamlit</span>
+                                    <span class="skill-tag-pill">Seaborn</span>
+                                    <span class="skill-tag-pill">MS Graph API</span>
+                                    <span class="skill-tag-pill">MSAL</span>
+                                    <span class="skill-tag-pill">GitHub</span>
+                                    <span class="skill-tag-pill">Agile</span>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <p>Visualizing intelligent insights through Power BI and building interactive AI-driven
+                                    web dashboards.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -121,116 +216,213 @@
 
         <section id="projects" class="projects-section">
             <div class="container">
-                <header class="section-header">
-                    <h2 class="section-title">Selected Works</h2>
+                <header class="section-header reveal-up">
+                    <h2 class="section-title">PROJECTS</h2>
                     <p class="section-subtitle">A collection of projects that push the boundaries of web development.
                     </p>
                 </header>
-                <div class="projects-grid">
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <h3>Doctor AI Assistant</h3>
-                            <p>Intelligent medical analysis agent using Vision LLMs to interpret medical images and
-                                provide diagnostic support.</p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>Vision LLM</span>
-                                <span>OpenAI</span>
+                <div class="projects-section-wrapper" style="position: relative;">
+                    <div class="dashboard-bg-animation">
+                        <div class="scanning-line"></div>
+                    </div>
+                    <div class="projects-grid reveal-up">
+                        <div class="project-card glass-card sticky-card">
+                            <span class="project-number">01</span>
+                            <div class="project-content-inner">
+                                <div class="project-info">
+                                    <h3>Smart Budget Analysis</h3>
+                                    <p>AI-powered financial analytics app processing CSV data for automated expense
+                                        categorization.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>Streamlit</span>
+                                        <span>LLM</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/saikumar1429/Smart_Budget_Agent" target="_blank"
+                                            class="github-link" title="GitHub Repository">
+                                            <i class="devicon-github-original"></i>
+                                        </a>
+                                        <a href="https://smartbudgetagent-ka5twrnez7nypxyvgicqpv.streamlit.app/"
+                                            target="_blank" class="btn btn-primary btn-sm live-project-btn">Live
+                                            Demo</a>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img src="assets/smart budget analysis.png" alt="Smart Budget Analysis">
+                                </div>
                             </div>
-                            <div class="project-links">
-                                <a href="https://github.com/saikumar1429/AI-Docter-agent" target="_blank"
-                                    class="github-link">
-                                    <span class="icon">Gh</span> Source Code
-                                </a>
+                        </div>
+
+                        <div class="project-card glass-card sticky-card">
+                            <span class="project-number">02</span>
+                            <div class="project-content-inner">
+                                <div class="project-info">
+                                    <h3>Movie Recommendation System</h3>
+                                    <p>Machine learning system to recommend movies based on user preferences and
+                                        similarity scores.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>ML</span>
+                                        <span>Pandas</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/saikumar1429/Movie-recommendation-system"
+                                            target="_blank" class="github-link" title="GitHub Repository">
+                                            <i class="devicon-github-original"></i>
+                                        </a>
+                                        <a href="https://movie-recommendation-system-9092.streamlit.app/"
+                                            target="_blank" class="btn btn-primary btn-sm live-project-btn">Live
+                                            Demo</a>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img src="assets/movie_recommendation_system.png" alt="Movie Recommendation System">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card glass-card sticky-card">
+                            <span class="project-number">03</span>
+                            <div class="project-content-inner">
+                                <div class="project-info">
+                                    <h3>AI Doctor Agent</h3>
+                                    <p>Intelligent medical analysis agent using Vision LLMs to interpret medical images
+                                        and provide diagnostic support.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>Vision LLM</span>
+                                        <span>OpenAI</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/saikumar1429/AI-Docter-agent" target="_blank"
+                                            class="github-link" title="GitHub Repository">
+                                            <i class="devicon-github-original"></i>
+                                        </a>
+                                        <a href="https://ai-docter-agent-9qlv3qznqwpnbiwpzdeqwa.streamlit.app/"
+                                            target="_blank" class="btn btn-primary btn-sm live-project-btn">Live
+                                            Demo</a>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img src="assets/doctor_brain.png" alt="AI Doctor Agent">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card glass-card sticky-card">
+                            <span class="project-number">04</span>
+                            <div class="project-content-inner">
+                                <div class="project-info">
+                                    <h3>Spam Email Classification</h3>
+                                    <p>NLP-based classification system mapping incoming emails into spam or ham using
+                                        machine learning algorithms.</p>
+                                    <div class="project-tags">
+                                        <span>NLP</span>
+                                        <span>Scikit-Learn</span>
+                                        <span>Python</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/saikumar1429/Spam-Email-Classification"
+                                            target="_blank" class="github-link" title="GitHub Repository">
+                                            <i class="devicon-github-original"></i>
+                                        </a>
+                                        <a href="https://deloitteproject--sai6302235.replit.app" target="_blank"
+                                            class="btn btn-primary btn-sm live-project-btn">Live
+                                            Demo</a>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img src="assets/spam.png" alt="Spam Email Classification">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card glass-card sticky-card">
+                            <span class="project-number">05</span>
+                            <div class="project-content-inner">
+                                <div class="project-info">
+                                    <h3>RAG AI Assistant</h3>
+                                    <p>Production-grade RAG engine using vector databases and LangChain for
+                                        high-accuracy document retrieval.</p>
+                                    <div class="project-tags">
+                                        <span>LangChain</span>
+                                        <span>Vector DB</span>
+                                        <span>RAG</span>
+                                        <span>Groq</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/saikumar1429/Agentic-RAG-AI-Assistant"
+                                            target="_blank" class="github-link" title="GitHub Repository">
+                                            <i class="devicon-github-original"></i>
+                                        </a>
+                                        <a href="https://agentic-rag-ai-assistant.streamlit.app/" target="_blank"
+                                            class="btn btn-primary btn-sm live-project-btn">Live
+                                            Demo</a>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img src="assets/Screenshot 2026-03-15 143917.png" alt="RAG AI Assistant">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card glass-card sticky-card">
+                            <span class="project-number">06</span>
+                            <div class="project-content-inner">
+                                <div class="project-info">
+                                    <h3>One Drive Agent</h3>
+                                    <p>Automated agentic workflow interacting seamlessly with Microsoft OneDrive APIs
+                                        for intelligent file management.</p>
+                                    <div class="project-tags">
+                                        <span>LangGraph</span>
+                                        <span>APIs</span>
+                                        <span>Python</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/saikumar1429" target="_blank" class="github-link"
+                                            title="GitHub Repository">
+                                            <i class="devicon-github-original"></i>
+                                        </a>
+                                        <a href="https://onedrive-upload-agent-hrujk78ppazdiir6viic2y.streamlit.app/"
+                                            target="_blank" class="btn btn-primary btn-sm live-project-btn">Live
+                                            Demo</a>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img src="assets/one_drive agent.png" alt="One Drive Agent">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <h3>Multi-Agent AI App</h3>
-                            <p>LangGraph-powered autonomous system coordinating multiple specialized agents for complex
-                                reasoning and tasks.</p>
-                            <div class="project-tags">
-                                <span>LangGraph</span>
-                                <span>Multi-Agent</span>
-                                <span>Python</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/saikumar1429/Multi_agnets" target="_blank"
-                                    class="github-link">
-                                    <span class="icon">Gh</span> Source Code
-                                </a>
-                            </div>
-                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] AI Architecture Section -->
+        <section id="architecture" class="architecture-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">AI System Architecture</h2>
+                    <p class="section-subtitle">How I build intelligent RAG-based systems.</p>
+                </header>
+                <div class="architecture-container glass-card js-tilt">
+                    <div class="diagram-wrapper">
+                        <div class="diagram-node">User Query</div>
+                        <div class="diagram-arrow">➜</div>
+                        <div class="diagram-node">Retriever</div>
+                        <div class="diagram-arrow">➜</div>
+                        <div class="diagram-node">Vector Database</div>
+                        <div class="diagram-arrow">➜</div>
+                        <div class="diagram-node">LLM / Agent</div>
+                        <div class="diagram-arrow">➜</div>
+                        <div class="diagram-node">Generated Answer</div>
                     </div>
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <h3>Enterprise RAG System</h3>
-                            <p>Production-grade RAG engine using Pinecone vector database and LangChain for
-                                high-accuracy document retrieval.</p>
-                            <div class="project-tags">
-                                <span>Pinecone</span>
-                                <span>LangChain</span>
-                                <span>RAG</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/saikumar1429/RAG-with-Pinecone-Flan-t5" target="_blank"
-                                    class="github-link">
-                                    <span class="icon">Gh</span> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <h3>Book Recommender AI</h3>
-                            <p>Machine learning system using collaborative filtering to recommend books based on user
-                                preferences and similarity scores.</p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>Streamlit</span>
-                                <span>ML</span>
-                                <span>Pandas</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/saikumar1429/Book_Recommendation" target="_blank"
-                                    class="github-link">
-                                    <span class="icon">Gh</span> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <h3>LangChain AI Chatbot</h3>
-                            <p>Interactive chatbot built with LangChain and Hugging Face's Mistral-7B model, featuring
-                                runtime API key integration.</p>
-                            <div class="project-tags">
-                                <span>LangChain</span>
-                                <span>Hugging Face</span>
-                                <span>LLM</span>
-                                <span>Python</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/saikumar1429/lang_chain_chatbot" target="_blank"
-                                    class="github-link">
-                                    <span class="icon">Gh</span> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card glass-card">
-                        <div class="project-info">
-                            <h3>Smart AI Budget Analysis</h3>
-                            <p>AI-powered financial analytics app processing CSV data for automated expense
-                                categorization.</p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>Streamlit</span>
-                                <span>LLM</span>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="architecture-info" style="margin: 20px auto; max-width: 800px; text-align: center;">
+                    <p>This flow illustrates a typical Retrieval-Augmented Generation (RAG) pipeline. It ensures that
+                        the AI's responses are grounded in specific data provided by the vector database, reducing
+                        hallucinations and improving accuracy.</p>
                 </div>
             </div>
         </section>
@@ -242,7 +434,7 @@
                     <p class="section-subtitle">Real-world impact in AI/ML engineering.</p>
                 </header>
                 <div class="experience-grid">
-                    <div class="experience-card glass-card">
+                    <div class="experience-card glass-card js-tilt">
                         <p class="experience-duration">Aug 2025 – Jan 2026</p>
                         <p class="experience-company">Lnteks Technologies, Hyderabad</p>
                         <h3>AI / ML Engineer Intern</h3>
@@ -265,32 +457,75 @@
             <div class="container">
                 <header class="section-header">
                     <h2 class="section-title">Education</h2>
-                    <p class="section-subtitle">Academic background and continuous learning.</p>
+                    <p class="section-subtitle">My academic foundation and qualifications.</p>
                 </header>
                 <div class="timeline education-timeline">
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>B.Tech in Computer Science and Engineering</h4>
-                            <p class="edu-institution">Malla Reddy College of Engineering and Technology (MRCET)</p>
-                            <span>2021 - 2025 | CGPA: 7.3</span>
-                            <p>Focusing on AI, Data Structures, and Software Development.</p>
+                        <div class="timeline-dot neon-glow"></div>
+                        <div class="timeline-content glass-card js-tilt">
+                            <span class="timeline-date">2021 – 2025</span>
+                            <h4>B.Tech in Computer Science</h4>
+                            <p><strong>Malla Reddy College of Engineering, Hyderabad</strong> | CGPA: 7.3</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Intermediate (MPC)</h4>
-                            <p class="edu-institution">Sri Sharada Junior College, Sircilla</p>
-                            <span>2019 - 2021 | GPA: 9.1</span>
+                        <div class="timeline-dot neon-glow"></div>
+                        <div class="timeline-content glass-card js-tilt">
+                            <span class="timeline-date">2019 – 2021</span>
+                            <h4>Intermediate</h4>
+                            <p><strong>Sri Sarada Junior College, Sircilla</strong> | GPA: 9.1</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>SSC</h4>
-                            <p class="edu-institution">KRZPHS Boys High School, Sircilla</p>
-                            <span>2018 - 2019 | GPA: 9.7</span>
+                        <div class="timeline-dot neon-glow"></div>
+                        <div class="timeline-content glass-card js-tilt">
+                            <span class="timeline-date">2018 – 2019</span>
+                            <h4>SSC (10th Grade)</h4>
+                            <p><strong>KRZPHS High School, Sircilla</strong> | GPA: 9.7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="certifications-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Certifications</h2>
+                    <p class="section-subtitle">Official recognitions of my technical proficiencies.</p>
+                </header>
+                <div class="certifications-grid">
+                    <div class="cert-card glass-card js-tilt">
+                        <img src="assets/guvi.img.jpg" alt="Generative AI Certificate" class="cert-image">
+                        <div class="cert-content">
+                            <i class="devicon-tensorflow-original cert-icon-small"></i>
+                            <div>
+                                <h3>Generative AI</h3>
+                                <p class="cert-issuer">GUVI & HCL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card glass-card js-tilt">
+                        <img src="assets/Certificate_page-0001.jpg" alt="Data Analytics Certificate" class="cert-image">
+                        <div class="cert-content">
+                            <i class="devicon-pandas-plain cert-icon-small"></i>
+                            <div>
+                                <h3>Data Analytics</h3>
+                                <p class="cert-issuer">Vodafone Idea Foundation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-card glass-card js-tilt">
+                        <img src="assets/Gen AI-Veerabathini Sai Kumar Certificate.png" alt="AI Engineer Certificate"
+                            class="cert-image">
+                        <div class="cert-content">
+                            <i class="devicon-python-plain cert-icon-small"></i>
+                            <div>
+                                <h3>AI Engineer</h3>
+                                <p class="cert-issuer">SKILLMOVE by LNteks</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -303,30 +538,16 @@
                     <h2 class="section-title">About Me</h2>
                     <p class="section-subtitle">Bridging the gap between engineering and AI innovation.</p>
                 </header>
-                <div class="about-grid">
-                    <div class="about-text glass-card">
-                        <p>I am a Computer Science graduate and Generative AI Engineer with a strong foundation in AI/ML
-                            and Data Analytics. With 6 months of hands-on internship experience at Lnteks Technologies,
-                            I have developed expertise in leveraging Large Language Models (LLMs), LangGraph, and Vector
-                            Databases to build production-ready AI solutions.</p>
-                        <p>I am deeply dedicated to solving real-world problems through innovative machine learning
-                            architectures and efficient data-driven strategies. My approach combines technical rigor
-                            with a focus on scalable and impactful digital experiences.</p>
-                        <div class="about-highlights">
-                            <div class="highlight-item">
-                                <strong>6+ Months</strong>
-                                <span>Internship Experience</span>
-                            </div>
-                            <div class="highlight-item">
-                                <strong>10+ Projects</strong>
-                                <span>AI/ML Implementations</span>
-                            </div>
-                            <div class="highlight-item">
-                                <strong>Star Performer</strong>
-                                <span>Recognition for Excellence</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="about-content glass-card minimalist-layout js-tilt">
+                    <p class="large-typography">
+                        I am deeply passionate about <strong>Artificial Intelligence, Machine Learning, and Generative
+                            AI</strong>.
+                        My journey is driven by the desire to build intelligent systems that solve complex problems.
+                        With extensive experience working with <strong>Python, ML models, LLMs, and AI
+                            automation</strong>,
+                        I aim to push the boundaries of what is possible, creating scalable, real-world solutions that
+                        make a tangible impact.
+                    </p>
                 </div>
             </div>
         </section>
@@ -338,17 +559,17 @@
                     <p class="section-subtitle">Values I bring to every engineering team.</p>
                 </header>
                 <div class="testimonials-grid">
-                    <div class="testimonial-item glass-card">
+                    <div class="testimonial-item glass-card js-tilt">
                         <h3>Problem Solver</h3>
                         <p>I thrive on breaking down complex technical challenges into scalable, production-ready code.
                         </p>
                     </div>
-                    <div class="testimonial-item glass-card">
+                    <div class="testimonial-item glass-card js-tilt">
                         <h3>Rapid Learner</h3>
                         <p>Deeply committed to staying at the forefront of AI research and implementing cutting-edge
                             tools.</p>
                     </div>
-                    <div class="testimonial-item glass-card">
+                    <div class="testimonial-item glass-card js-tilt">
                         <h3>Collaborative Spirit</h3>
                         <p>Experience working in agile environments, bridging the gap between design and engineering.
                         </p>
@@ -358,79 +579,117 @@
         </section>
 
         <section id="contact" class="contact-section">
-            <div class="container">
-                <header class="section-header">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <p class="section-subtitle">Have a project in mind or want to collaborate? Feel free to reach out to
-                        me!</p>
+            <div class="contact-bg-grid"></div>
+            <canvas id="contact-particles"></canvas>
+
+            <div class="container relative z-10">
+                <header class="contact-header reveal-up">
+                    <h1 class="contact-title neon-text-red">SEND A WEB!</h1>
+                    <h2 class="contact-subtitle">LET'S BUILD SOMETHING EXTRAORDINARY</h2>
+                    <div class="glowing-underline"></div>
                 </header>
-                <div class="contact-grid-redesign">
-                    <!-- Left: Form -->
-                    <div class="contact-form-side glass-card">
-                        <form class="contact-form-enhanced">
+
+                <div class="contact-two-column">
+                    <!-- Left Side: Contact Cards -->
+                    <div class="contact-cards-wrapper reveal-left">
+
+                        <div class="glass-contact-card">
+                            <div class="card-icon-wrapper">
+                                <i class="devicon-google-plain"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Email</h4>
+                                <p>saikumar.veerabathini@gmail.com</p>
+                            </div>
+                            <div class="card-glow"></div>
+                        </div>
+
+                        <div class="glass-contact-card">
+                            <div class="card-icon-wrapper">
+                                <span>📱</span>
+                            </div>
+                            <div class="card-content">
+                                <h4>Phone</h4>
+                                <p>+91 6302235364</p>
+                            </div>
+                            <div class="card-glow"></div>
+                        </div>
+
+                        <div class="glass-contact-card">
+                            <div class="card-icon-wrapper">
+                                <span>📍</span>
+                            </div>
+                            <div class="card-content">
+                                <h4>Location</h4>
+                                <p>Global / Remote</p>
+                            </div>
+                            <div class="card-glow"></div>
+                        </div>
+
+                        <a href="https://github.com/saikumar1429" target="_blank"
+                            class="glass-contact-card interactive-card">
+                            <div class="card-icon-wrapper">
+                                <i class="devicon-github-original"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>GitHub</h4>
+                                <p>saikumar1429</p>
+                            </div>
+                            <div class="card-glow"></div>
+                        </a>
+
+                        <a href="https://linkedin.com/in/saikumar6302" target="_blank"
+                            class="glass-contact-card interactive-card">
+                            <div class="card-icon-wrapper">
+                                <i class="devicon-linkedin-plain"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>LinkedIn</h4>
+                                <p>saikumar6302</p>
+                            </div>
+                            <div class="card-glow"></div>
+                        </a>
+
+                    </div>
+
+                    <!-- Right Side: Contact Form and 3D Visual -->
+                    <div class="contact-form-wrapper reveal-right">
+
+                        <div class="floating-sphere-container">
+                            <div class="orbiting-ring"></div>
+                            <div class="glowing-core"></div>
+                        </div>
+
+                        <form id="contact-form" class="glass-contact-form">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Your Name</label>
-                                    <input type="text" placeholder="John Doe" required>
+                                    <input type="text" name="user_name" placeholder="John Doe" required class="neon-input">
                                 </div>
                                 <div class="form-group">
-                                    <label>Your Email</label>
-                                    <input type="email" placeholder="john@example.com" required>
+                                    <label>Email Address</label>
+                                    <input type="email" name="user_email" placeholder="john@example.com" required
+                                        class="neon-input">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group full-width">
                                 <label>Subject</label>
-                                <input type="text" placeholder="Subject" required>
+                                <input type="text" name="subject" placeholder="Project Inquiry / Job Opportunity"
+                                    class="neon-input">
                             </div>
-                            <div class="form-group">
-                                <label>Your Message</label>
-                                <textarea rows="6" placeholder="Your message here..." required></textarea>
+                            <div class="form-group full-width">
+                                <label>Message</label>
+                                <textarea name="message" rows="4"
+                                    placeholder="Tell me about your project or opportunity..." required
+                                    class="neon-input"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-wide">
-                                Send Message <i class="devicon-google-plain"></i>
-                                <!-- Placeholder for plane icon if not using fontawesome -->
+                            <button type="submit" id="submit-btn" class="btn neon-red-btn animated-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loader"></span>
                             </button>
+                            <div id="form-status" class="form-status"></div>
                         </form>
-                    </div>
 
-                    <!-- Right: Contact Info -->
-                    <div class="contact-info-side">
-                        <h3 class="info-title">Contact Information</h3>
-                        <p class="info-desc">Feel free to get in touch with me. I'm always open to discussing new
-                            projects, creative ideas, or opportunities to be part of your visions.</p>
-
-                        <div class="contact-links-list">
-                            <div class="info-item">
-                                <span class="info-icon"><i class="devicon-google-plain"></i></span>
-                                <div class="info-text">
-                                    <p>saikumar.veerabathini@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon">📞</span>
-                                <div class="info-text">
-                                    <p>+91 6302235364</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon">📍</span>
-                                <div class="info-text">
-                                    <p>Hyderabad, Telangana, India</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <a href="https://github.com/saikumar1429" target="_blank" class="info-link">
-                                    <span class="info-icon"><i class="devicon-github-original"></i></span>
-                                    <p>github.com/saikumar1429</p>
-                                </a>
-                            </div>
-                            <div class="info-item">
-                                <a href="https://linkedin.com/in/saikumar6302" target="_blank" class="info-link">
-                                    <span class="info-icon"><i class="devicon-linkedin-plain"></i></span>
-                                    <p>linkedin.com/in/saikumar6302</p>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -439,15 +698,34 @@
 
     <footer class="main-footer">
         <div class="container footer-content">
-            <p>&copy; 2026 Veerabathini Sai Kumar. Dedicated to AI innovation.</p>
+            <p>&copy; 2026 Sai Kumar. Building the future with Agentic AI.</p>
             <div class="social-links">
                 <a href="https://github.com/saikumar1429" target="_blank" class="social-icon">Gh</a>
                 <a href="https://linkedin.com/in/saikumar6302" target="_blank" class="social-icon">Li</a>
-                <a href="mailto:saikumar.veerabathini@gmail.com" class="social-icon">Em</a>
             </div>
         </div>
     </footer>
 
+    <!-- AI Chatbot Overlay -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" id="chat-toggle">🤖</button>
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <span>Sai's AI Assistant</span>
+                <button id="close-chat"
+                    style="background: none; border: none; color: white; cursor: pointer; font-size: 1.2rem;">&times;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message ai">Hello! I'm Sai's AI assistant. How can I help you today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ask me something...">
+                <button class="chat-button" id="send-msg">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="main.js"></script>
 </body>
 

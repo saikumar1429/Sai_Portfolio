@@ -1,0 +1,57 @@
+VEERABATHINI SAI KUMAR 
+Hyderabad, India | +91 6302235364 
+vsaikumar137@gmail.com 
+http://www.linkedin.com/saikumar6302 
+ 
+PROFESSIONAL SUMMARY  
+Computer Science graduate and Generative AI Intern with 6 months of internship experience in 
+AI/ML and Data Analytics. Expert in leveraging LLMs, LangGraph, and Vector Databases to 
+build production-ready AI solutions. Dedicated to solving real-world problems through 
+innovative machine learning architectures and efficient data-driven strategies. 
+ 
+TECHNICAL SKILLS  
+• AI/ML & Gen AI: RAG, Multi-agent AI Systems, NLP, Prompt Engineering, Semantic 
+Search, EDA 
+• Frameworks: LangChain, LangGraph, LlamaIndex, Pytest 
+• Programming & Data: Python (Pandas, NumPy, scikit-learn), SQL, APIs, JSON 
+• Vector Databases: Pinecone, FAISS, ChromaDB 
+• BI Tools: Power BI (Basic), Seaborn 
+• Methodologies: SDLC 
+ 
+PROFESSIONAL EXPERIENCE  
+AI / ML Engineer Intern | Lnteks Technologies, Hyderabad | Aug 2025 – Jan 2026 
+• Developed AI-driven applications using Python, Machine Learning models, and NLP 
+techniques. 
+• Built automation dashboards and reporting workflows, improving process efficiency by ~20%. 
+• Implemented data preprocessing, feature engineering, and model evaluation for predictive 
+tasks. 
+• Collaborated with teams in an Agile SDLC environment, supporting deployment and 
+debugging. 
+ 
+PROJECTS  
+Smart AI Budget Analysis | Python, Streamlit, Pandas, LLM 
+• Developed an AI-powered financial analytics application that processes CSV transaction data, 
+performs automated expense categorization, and generates real-time visual insights using 
+Streamlit. 
+• Implemented data cleaning, income-expense segmentation, and rule-based classification to 
+analyze spending patterns and identify cost-saving opportunities. 
+• Integrated a Large Language Model (LLM) to generate personalized financial summaries and 
+intelligent recommendations from structured financial data. 
+SharePoint Automation Agent | Python, MSAL, Microsoft Graph API 
+• Built a secure file automation system using MSAL and Microsoft Graph API to authenticate 
+users and manage SharePoint document operations. 
+• Implemented automated file upload, retrieval, and access control workflows through REST API 
+integration. 
+• Designed a Streamlit-based interface with token caching and secure session management to 
+improve cloud file handling efficiency. 
+ 
+EDUCATION  
+• B.Tech in Computer Science | Malla Reddy College of Engineering, Hyderabad | CGPA: 7.3 | 
+2021 – 2025 
+• Intermediate | Sri Sarada Junior College, Sircilla | GPA: 9.1 | 2019 – 2021 
+• SSC | KRZPHS High School, Sircilla | GPA: 9.7 | 2018 – 2019 
+ 
+CERTIFICATIONS  
+• Generative AI – GUVI & HCL 
+• Data Analytics – Vodafone Idea Foundation 
+ 
