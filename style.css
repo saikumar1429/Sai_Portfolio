@@ -1977,6 +1977,14 @@ h4 {
 }
 
 @media (max-width: 768px) {
+    #navbar {
+        padding: 10px 0; /* Smaller padding on mobile */
+    }
+
+    .logo {
+        font-size: 1.2rem; /* Smaller logo on mobile */
+    }
+
     .nav-toggle {
         display: flex;
     }
