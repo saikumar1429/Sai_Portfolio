@@ -1,4 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Lenis Smooth Scroll Initialization ---
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        touchMultiplier: 2
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Synchronize Lenis with ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
     // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -122,6 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
             const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
             skillsContainer.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+    }
+
+    // Modern Glow BG Parallax
+    const glowBg = document.querySelector('.modern-glow-bg');
+    if (glowBg) {
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+            glowBg.style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
     }
 
@@ -372,54 +405,133 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resize);
     })();
 
-    // Projects Stacked Scroll Effect
-    const projectCards = document.querySelectorAll('.sticky-card');
+    // --- Awwwards-Style GSAP Projects Stacked Scroll ---
+    const projectSection = document.querySelector('.projects-section');
+    const projectCards = gsap.utils.toArray('.sticky-card');
 
-    if (projectCards.length > 0) {
-        window.addEventListener('scroll', () => {
-            const windowHeight = window.innerHeight;
+    if (projectSection && projectCards.length > 0) {
+        gsap.registerPlugin(ScrollTrigger);
 
-            projectCards.forEach((card, index) => {
-                const rect = card.getBoundingClientRect();
-                const topDist = rect.top;
+        let mm = gsap.matchMedia();
 
-                // sticky top defined as 15vh in CSS
-                const stickPoint = windowHeight * 0.15;
+        mm.add("(min-width: 1025px)", () => {
+            // Initial setup for desktop
+            projectCards.forEach((card, i) => {
+                gsap.set(card, {
+                    yPercent: i === 0 ? 0 : 100, // Cards start below except first
+                    scale: 1,
+                    opacity: 1,
+                    filter: "blur(0px)",
+                    transformPerspective: 1000
+                });
 
-                if (topDist <= stickPoint + 20) {
-                    const nextCard = projectCards[index + 1];
-                    if (nextCard) {
-                        const nextRect = nextCard.getBoundingClientRect();
-                        const distToNext = nextRect.top - topDist;
+                // --- Premium Hover Tilt Effect ---
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -5;
+                    const rotateY = ((x - centerX) / centerX) * 5;
 
-                        const startOverlap = windowHeight * 0.7;
-                        if (distToNext < startOverlap) {
-                            let progress = 1 - (distToNext / startOverlap);
-                            progress = Math.max(0, Math.min(1, progress));
+                    gsap.to(card, {
+                        rotateX: rotateX,
+                        rotateY: rotateY,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
 
-                            const scale = 1 - (progress * 0.05); // down to 0.95
-                            const blur = progress * 5; // blur to 5px
-                            const opacity = 1 - (progress * 0.4);
-
-                            card.style.transform = `scale(${scale})`;
-                            card.style.filter = `blur(${blur}px)`;
-                            card.style.opacity = `${opacity}`;
-                        } else {
-                            card.style.transform = `scale(1)`;
-                            card.style.filter = `blur(0px)`;
-                            card.style.opacity = `1`;
-                        }
-                    } else {
-                        card.style.transform = `scale(1)`;
-                        card.style.filter = `blur(0px)`;
-                        card.style.opacity = `1`;
+                    // Subtle inner image shift
+                    const img = card.querySelector('.project-image img');
+                    if (img) {
+                        gsap.to(img, {
+                            x: (x - centerX) * 0.05,
+                            y: (y - centerY) * 0.05,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        });
                     }
-                } else {
-                    card.style.transform = `scale(1)`;
-                    card.style.filter = `blur(0px)`;
-                    card.style.opacity = `1`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        rotateX: 0,
+                        rotateY: 0,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+
+                    const img = card.querySelector('.project-image img');
+                    if (img) {
+                        gsap.to(img, {
+                            x: 0,
+                            y: 0,
+                            duration: 0.5,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+            });
+
+            const mainTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: projectSection,
+                    start: "top top",
+                    end: `+=${projectCards.length * 100}%`, // Reduced from 150% for tighter scroll
+                    pin: true,
+                    pinSpacing: true,
+                    scrub: 1, // Balanced scrub
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true
                 }
             });
+
+            projectCards.forEach((card, i) => {
+                if (i < projectCards.length - 1) {
+                    const nextCard = projectCards[i + 1];
+
+                    // --- Transition to Next Card ---
+                    
+                    // 1. Move ALL previous cards down further in scale and blur
+                    for (let j = 0; j <= i; j++) {
+                        const prevCard = projectCards[j];
+                        const isDirectPrev = j === i;
+                        
+                        mainTimeline.to(prevCard, {
+                            scale: isDirectPrev ? 0.92 : 0.85,
+                            filter: isDirectPrev ? "blur(5px)" : "blur(12px)",
+                            opacity: isDirectPrev ? 0.6 : 0.3,
+                            rotationX: -10,
+                            y: -30 * (i - j + 1), // Progressive upward shift
+                            duration: 1,
+                            ease: "power2.inOut"
+                        }, i);
+                    }
+
+                    // 2. Slide next card UP on top
+                    mainTimeline.to(nextCard, {
+                        yPercent: 0,
+                        duration: 1,
+                        ease: "power2.inOut"
+                    }, i);
+
+                    // 3. Image parallax for next card as it enters
+                    const nextImg = nextCard.querySelector('.project-image img');
+                    if (nextImg) {
+                        mainTimeline.fromTo(nextImg, 
+                            { y: -100, scale: 1.2 },
+                            { y: 0, scale: 1.1, duration: 1, ease: "none" }, 
+                            i
+                        );
+                    }
+                }
+            });
+
+            return () => {
+                // Pre-cleanup if needed (matchMedia does most of it)
+                gsap.set(projectCards, { clearProps: "all" });
+            };
         });
     }
     // --- EmailJS Integration ---
