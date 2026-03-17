@@ -85,68 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // AI Chatbot Logic
-    const chatToggle = document.getElementById('chat-toggle');
-    const closeChat = document.getElementById('close-chat');
-    const chatWindow = document.getElementById('chat-window');
-    const sendBtn = document.getElementById('send-msg');
-    const userInput = document.getElementById('user-input');
-    const chatMessages = document.getElementById('chat-messages');
-
-    if (chatToggle && chatWindow) {
-        chatToggle.addEventListener('click', () => {
-            chatWindow.classList.toggle('active');
-        });
-
-        closeChat.addEventListener('click', () => {
-            chatWindow.classList.remove('active');
-        });
-
-        const sendMessage = () => {
-            const text = userInput.value.trim();
-            if (text) {
-                // Add user message
-                const userMsg = document.createElement('div');
-                userMsg.className = 'message user';
-                userMsg.textContent = text;
-                chatMessages.appendChild(userMsg);
-                userInput.value = '';
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-
-                // Simple simulated response
-                setTimeout(() => {
-                    const aiMsg = document.createElement('div');
-                    aiMsg.className = 'message ai';
-                    aiMsg.textContent = "I'm a demo assistant for this portfolio. Sai can integrate me with a real LLM backend like LangChain or OpenAI soon!";
-                    chatMessages.appendChild(aiMsg);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 1000);
-            }
-        };
-
-        sendBtn.addEventListener('click', sendMessage);
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
-    }
 
     // Apply observer to specific reveal classes
     document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
         observer.observe(el);
     });
-
-    // 3D Tilt Hover Effect for Cards
-    const tiltElements = document.querySelectorAll('.js-tilt');
-
-    // Parallax logic for Skills Grid
-    const skillsContainer = document.getElementById('skills-container');
-    if (skillsContainer) {
-        document.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            skillsContainer.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        });
-    }
 
     // Modern Glow BG Parallax
     const glowBg = document.querySelector('.modern-glow-bg');
@@ -210,28 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    tiltElements.forEach(el => {
-        el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
-            const x = e.clientX - rect.left; // x position within the element.
-            const y = e.clientY - rect.top;  // y position within the element.
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * -10; // max rotation 10deg
-            const rotateY = ((x - centerX) / centerX) * 10;
-
-            el.style.transform = `perspective(1000px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            el.style.transition = 'none';
-            // Update glare effect if we added one, optional
-        });
-
-        el.addEventListener('mouseleave', () => {
-            el.style.transform = 'perspective(1000px) scale(1) rotateX(0) rotateY(0)';
-            el.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        });
-    });
 
     // Custom Cursor Logic
     const cursorDot = document.querySelector('.cursor-dot');
@@ -250,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Add hover effects for interactive elements
-        const interactables = document.querySelectorAll('a, button, .js-tilt, .contact-item, input, textarea');
+        const interactables = document.querySelectorAll('a, button, .contact-item, input, textarea');
         interactables.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 document.body.classList.add('cursor-hover');
