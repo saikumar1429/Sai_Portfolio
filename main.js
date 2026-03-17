@@ -1,3 +1,14 @@
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.transform = 'translateY(-100%)';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 800);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- Lenis Smooth Scroll Initialization ---
     const lenis = new Lenis({
@@ -26,13 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.padding = '10px 0';
-            navbar.style.background = 'rgba(5, 5, 5, 0.8)';
-            navbar.style.borderBottom = '1px solid var(--glass-border)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.padding = '20px 0';
-            navbar.style.background = 'rgba(5, 5, 5, 0.5)';
-            navbar.style.borderBottom = 'none';
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks && navLinks.classList.contains('active')) {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
         }
     });
 
